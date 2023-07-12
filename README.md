@@ -9,5 +9,4 @@ Blocks are added and removed by editing the blocks.h header file.
 By default the blocks.h header file is created the first time you run make which copies the default config from blocks.def.h.
 This is so you can edit your status bar commands and they will not get overwritten in a future update.
 # patches
-<br>
 <a href=https://gist.github.com/IGeraGera/e4a5583b91b3eec2e81fdceb44dea717>dwmblocks-statuscmd-b6b0be4.diff</a>
