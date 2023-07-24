@@ -1,4 +1,0 @@
-Installation:
-git clone https://gitlab.com/vu20022012/dwmblocks .dwmblocks
-cd .dwmblocks
-sudo make clean install
