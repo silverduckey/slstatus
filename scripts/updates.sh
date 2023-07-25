@@ -1,4 +1,4 @@
 #!/bin/bash
 
-updates="$(checkupdates | wc -l)"
+updates="$(pacman -Qum | wc -l)"
 echo -e "Updates: $updates"
