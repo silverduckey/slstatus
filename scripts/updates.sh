@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-updates="$(paru -Qu | wc -l)"
+updates="$(pacman -Qu | wc -l)"
 echo -e "Updates: $updates"
