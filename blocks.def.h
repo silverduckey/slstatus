@@ -5,6 +5,8 @@ static const Block blocks[] = {
 
     {"", "~/.dwmblocks/scripts/uptime.sh", 1, 0},
 
+    {"", "~/.dwmblocks/scripts/updates.sh", 60, 0},
+
     {"", "~/.dwmblocks/scripts/cpu.sh", 1, 0},
 
     {"", "~/.dwmblocks/scripts/ram.sh", 1, 0},
