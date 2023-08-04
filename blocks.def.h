@@ -12,5 +12,5 @@ static const Block blocks[] = {
     {"", "~/.dwmblocks/scripts/date.sh", 1, 0},
 };
 
-static char delim[] = " | ";
+static char delim[] = "  ";
 static unsigned int delimLen = 5;
