@@ -68,7 +68,7 @@ static const struct arg args[] = {
 	{ kernel_release,  "%s | ",         NULL              },
 	{ uptime,          "Uptime: %s | ", NULL              },
 	{ disk_perc,       "Disk: %s%% | ", "/"               },
-	{ cpu_perc,        "CPU: %s%% | ",  NULL              },
 	{ ram_perc,        "RAM: %s%% | ",  NULL              },
+	{ cpu_perc,        "CPU: %s%% | ",  NULL              },
 	{ datetime,        "%s",            "%A %B %d %Y, %T" },
 };
