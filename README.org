@@ -1,6 +1,9 @@
-## Installation
-```
+** Installation
+:PROPERTIES:
+:CUSTOM_ID: installation
+:END:
+#+begin_example
 git clone https://gitlab.com/vudangxyz/slstatus ~/.slstatus
 cd ~/.slstatus
 sudo make clean install
-```
+#+end_example
