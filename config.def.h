@@ -6,12 +6,14 @@ const unsigned int interval = 1000;
 /* text to show if no value can be retrieved */
 static const char unknown_str[] = "n/a";
 
-/* maximum output string length */
-#define MAXLEN 2048
+/* maximum command output length */
+#define CMDLEN 128
 
 /*
  * function            description                     argument (example)
  *
+ * battery_icon        battery_perc with an icon       battery name (BAT0)
+ *                                                     NULL on OpenBSD/FreeBSD
  * battery_perc        battery percentage              battery name (BAT0)
  *                                                     NULL on OpenBSD/FreeBSD
  * battery_remaining   battery remaining HH:MM         battery name (BAT0)
@@ -58,20 +60,26 @@ static const char unknown_str[] = "n/a";
  * uid                 UID of current user             NULL
  * uptime              system uptime                   NULL
  * username            username of current user        NULL
+ * vol_icon            vol_perc with an icon           mixer file (/dev/mixer)
+ *                                                     NULL on OpenBSD/FreeBSD
  * vol_perc            OSS/ALSA volume in percent      mixer file (/dev/mixer)
  *                                                     NULL on OpenBSD/FreeBSD
  * wifi_essid          WiFi ESSID                      interface name (wlan0)
  * wifi_perc           WiFi signal in percent          interface name (wlan0)
  */
 static const struct arg args[] = {
-	/* function        format              argument */
-    { kernel_release,  "  %s | ",   NULL    },
-    { netspeed_rx,     "  %s | ",   "ens33" },
-    { netspeed_tx,     "󰅧  %s | ",   "ens33" },
-    { uptime,          "󰖜  %s | ",   NULL    },
-    { battery_perc,    "󰁹 %s%% | ",  "BAT1"  },
-    { disk_perc,       "  %s%% | ", "/"     },
-    { ram_perc,        "  %s%% | ", NULL    },
-    { cpu_perc,        "  %s%% | ", NULL    },
-    { datetime,        "  %s",      "%c"    },
+	/* function        format        argument            turn  signal */
+    { run_command,     "󰮯  %s | ",   "paru -Qu | wc -l", 5,    -1 },
+    { kernel_release,  "  %s | ",   NULL,               1,    -1 },
+    { netspeed_rx,     "  %s | ",   "ens33",            1,    -1 },
+    { netspeed_tx,     "󰅧  %s | ",   "ens33",            1,    -1 },
+    { uptime,          "󰖜  %s | ",   NULL,               1,    -1 },
+    { battery_icon,    "%s%% | ",    "BAT1",             1,    -1 },
+    { disk_perc,       "  %s%% | ", "/",                1,    -1 },
+    { ram_perc,        "  %s%% | ", NULL,               1,    -1 },
+    { cpu_perc,        "  %s%% | ", NULL,               1,    -1 },
+    { datetime,        "  %s",      "%c",               1,    -1 },
 };
+
+/* maximum output string length */
+#define MAXLEN CMDLEN * LEN(args)
