@@ -7,3 +7,4 @@ git clone https://gitlab.com/vudangxyz/slstatus ~/.slstatus
 cd ~/.slstatus
 sudo make clean install
 #+end_example
+In order for the update function to work you will need to install paru and allow it to execute without a password.
