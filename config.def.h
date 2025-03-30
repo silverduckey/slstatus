@@ -69,7 +69,7 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function        format        argument                                     turn  signal */
-    { run_command,     "󰮯  %s | ",   "paru -Syy > /dev/null && paru -Qu | wc -l", 30,   -1 },
+    { run_command,     "󰮯  %s | ",   "paru -Syy > /dev/null && paru -Qu | wc -l", 600,  -1 },
     { kernel_release,  "  %s | ",   NULL,                                        1,    -1 },
     { netspeed_rx,     "  %s | ",   "ens33",                                     1,    -1 },
     { netspeed_tx,     "󰅧  %s | ",   "ens33",                                     1,    -1 },
