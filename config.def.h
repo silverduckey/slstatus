@@ -68,17 +68,17 @@ static const char unknown_str[] = "n/a";
  * wifi_perc           WiFi signal in percent          interface name (wlan0)
  */
 static const struct arg args[] = {
-	/* function        format        argument            turn  signal */
-    { run_command,     "󰮯  %s | ",   "paru -Qu | wc -l", 5,    -1 },
-    { kernel_release,  "  %s | ",   NULL,               1,    -1 },
-    { netspeed_rx,     "  %s | ",   "ens33",            1,    -1 },
-    { netspeed_tx,     "󰅧  %s | ",   "ens33",            1,    -1 },
-    { uptime,          "󰖜  %s | ",   NULL,               1,    -1 },
-    { battery_icon,    "%s%% | ",    "BAT1",             1,    -1 },
-    { disk_perc,       "  %s%% | ", "/",                1,    -1 },
-    { ram_perc,        "  %s%% | ", NULL,               1,    -1 },
-    { cpu_perc,        "  %s%% | ", NULL,               1,    -1 },
-    { datetime,        "  %s",      "%c",               1,    -1 },
+	/* function        format        argument                                     turn  signal */
+    { run_command,     "󰮯  %s | ",   "paru -Syy > /dev/null && paru -Qu | wc -l", 30,   -1 },
+    { kernel_release,  "  %s | ",   NULL,                                        1,    -1 },
+    { netspeed_rx,     "  %s | ",   "ens33",                                     1,    -1 },
+    { netspeed_tx,     "󰅧  %s | ",   "ens33",                                     1,    -1 },
+    { uptime,          "󰖜  %s | ",   NULL,                                        1,    -1 },
+    { battery_icon,    "%s%% | ",    "BAT1",                                      1,    -1 },
+    { disk_perc,       "  %s%% | ", "/",                                         1,    -1 },
+    { ram_perc,        "  %s%% | ", NULL,                                        1,    -1 },
+    { cpu_perc,        "  %s%% | ", NULL,                                        1,    -1 },
+    { datetime,        "  %s",      "%c",                                        1,    -1 },
 };
 
 /* maximum output string length */
