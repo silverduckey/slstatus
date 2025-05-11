@@ -58,6 +58,7 @@ static const char unknown_str[] = "n/a";
  *                                                     thermal zone on FreeBSD
  *                                                     (tz0, tz1, etc.)
  * uid                 UID of current user             NULL
+ * up                  interface is running            interface name (eth0)
  * uptime              system uptime                   NULL
  * username            username of current user        NULL
  * vol_icon            vol_perc with an icon           mixer file (/dev/mixer)
@@ -69,16 +70,16 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function        format        argument                turn  signal */
-    { run_command,     "󰮯  %s | ",   "checkupdates | wc -l", 5,    -1 },
-    { kernel_release,  "  %s | ",   NULL,                   1,    -1 },
-    { netspeed_rx,     "  %s | ",   "ens33",                1,    -1 },
-    { netspeed_tx,     "󰅧  %s | ",   "ens33",                1,    -1 },
-    { uptime,          "󰖜  %s | ",   NULL,                   1,    -1 },
-    { battery_icon,    "%s%% | ",    "BAT1",                 1,    -1 },
-    { disk_perc,       "  %s%% | ", "/",                    1,    -1 },
-    { ram_perc,        "  %s%% | ", NULL,                   1,    -1 },
-    { cpu_perc,        "  %s%% | ", NULL,                   1,    -1 },
-    { datetime,        "  %s",      "%c",                   1,    -1 },
+	{ run_command,     "󰮯  %s | ",   "checkupdates | wc -l", 5,    -1 },
+	{ kernel_release,  "  %s | ",   NULL,                   1,    -1 },
+	{ netspeed_rx,     "  %s | ",   "enp0s3",               1,    -1 },
+	{ netspeed_tx,     "󰅧  %s | ",   "enp0s3",               1,    -1 },
+	{ uptime,          "󰖜  %s | ",   NULL,                   1,    -1 },
+	{ battery_icon,    "%s%% | ",    "BAT0",                 1,    -1 },
+	{ disk_perc,       "  %s%% | ", "/",                    1,    -1 },
+	{ ram_perc,        "  %s%% | ", NULL,                   1,    -1 },
+	{ cpu_perc,        "  %s%% | ", NULL,                   1,    -1 },
+	{ datetime,        "  %s",      "%c",                   1,    -1 },
 };
 
 /* maximum output string length */

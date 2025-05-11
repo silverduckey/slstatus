@@ -1,5 +1,5 @@
 # slstatus version
-VERSION = 1.0
+VERSION = 1.1
 
 # customize below to fit your system
 
@@ -12,7 +12,7 @@ X11LIB = /usr/X11R6/lib
 
 # flags
 CPPFLAGS = -I$(X11INC) -D_DEFAULT_SOURCE -DVERSION=\"${VERSION}\"
-CFLAGS   = -O3 -march=native -std=c99 -pedantic -Wall -Wextra -Wno-unused-parameter -Os
+CFLAGS   = -std=c99 -pedantic -Wall -Wextra -Wno-unused-parameter -O3 -march=native
 LDFLAGS  = -L$(X11LIB) -s
 # OpenBSD: add -lsndio
 # FreeBSD: add -lkvm -lsndio
